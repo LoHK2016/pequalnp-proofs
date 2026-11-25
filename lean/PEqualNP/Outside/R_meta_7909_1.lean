@@ -1,0 +1,27 @@
+import Mathlib
+import PEqualNP.Defs
+set_option maxHeartbeats 1200000 in
+theorem PEqualNP.Outside.R_meta_7909_1
+    (h_count : ∀ (x1 x2 : ℕ) (x3 : Fin x2 → Fin x2 → Prop) [x4 : DecidableRel x3], (400 : ℕ) ≤ x1 → x2 = x1 ^ (2 : ℕ) + x1 + (1 : ℕ) → (∀ (x8 : Fin x2), Fintype.card { x9 : Fin x2 // x3 x9 x8 } = x1 + (1 : ℕ)) → (∀ (x9 x10 : Fin x2), x9 ≠ x10 → ∃! x12 : Fin x2, x3 x9 x12 ∧ x3 x10 x12) → Fintype.card { p : Fin x2 × Fin x2 // x3 p.1 p.2 } = x2 * x1)
+    (h_cap : ∀ (x1 x2 : ℕ) (x3 : Fin x2 → Fin x2 → Prop) [x4 : DecidableRel x3] (x5 : PEqualNP.CircuitLowerBounds.Circuit), (400 : ℕ) ≤ x1 → x2 = x1 ^ (2 : ℕ) + x1 + (1 : ℕ) → PEqualNP.MetaComplexity.Monotone2 x5 → x2 + x2 ≤ x5.output → x5.output < x2 + x2 + x5.size → (∃ (x13 : PEqualNP.CircuitLowerBounds.Gate), x5.gates[x5.output - (x2 + x2)]? = Option.some x13 ∧ x13.op = PEqualNP.CircuitLowerBounds.GateOp.and) → (∀ (x14 : ℕ) (x15 : PEqualNP.CircuitLowerBounds.Gate), x5.gates[x14]? = Option.some x15 → ∃ (x17 : ℕ) (x18 : ℕ), x15.inputs = [x17, x18] ∧ x17 < x18 ∧ x18 < x2 + x2 + x14) → (∀ (x15 x16 : Fin x2), x3 x15 x16 → (PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 fun (x18 : Fin (x2 + x2)) => Decidable.decide (x18 = Fin.castAdd x2 x15 ∨ x18 = Fin.natAdd x2 x16)) = Bool.true) → (∀ (x16 : Fin (x2 + x2) → Bool), Fintype.card { x17 : Fin x2 // x16 (Fin.natAdd x2 x17) = Bool.true } ≤ x1 → (¬∃ (x18 : Fin x2) (x19 : Fin x2), x3 x18 x19 ∧ x16 (Fin.castAdd x2 x18) = Bool.true ∧ x16 (Fin.natAdd x2 x19) = Bool.true) → PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 x16 = Bool.false) → Fintype.card { p : Fin x2 × Fin x2 // x3 p.1 p.2 ∧ PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true } ≤ (100 : ℕ) * x5.size)
+    (h_all : ∀ (x1 x2 : ℕ) (x3 : Fin x2 → Fin x2 → Prop) [x4 : DecidableRel x3] (x5 : PEqualNP.CircuitLowerBounds.Circuit), x2 = x1 ^ (2 : ℕ) + x1 + (1 : ℕ) → (∀ (x15 x16 : Fin x2), x3 x15 x16 → (PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 fun (x18 : Fin (x2 + x2)) => Decidable.decide (x18 = Fin.castAdd x2 x15 ∨ x18 = Fin.natAdd x2 x16)) = Bool.true) → ∀ p : Fin x2 × Fin x2, x3 p.1 p.2 → PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true)
+    : ∀ (x1 x2 : ℕ) (x3 : Fin x2 → Fin x2 → Prop) [x4 : DecidableRel x3] (x5 : PEqualNP.CircuitLowerBounds.Circuit), (400 : ℕ) ≤ x1 → x2 = x1 ^ (2 : ℕ) + x1 + (1 : ℕ) → (∀ (x8 : Fin x2), Fintype.card { x9 : Fin x2 // x3 x9 x8 } = x1 + (1 : ℕ)) → (∀ (x9 x10 : Fin x2), x9 ≠ x10 → ∃! x12 : Fin x2, x3 x9 x12 ∧ x3 x10 x12) → PEqualNP.MetaComplexity.Monotone2 x5 → x2 + x2 ≤ x5.output → x5.output < x2 + x2 + x5.size → (∃ (x13 : PEqualNP.CircuitLowerBounds.Gate), x5.gates[x5.output - (x2 + x2)]? = Option.some x13 ∧ x13.op = PEqualNP.CircuitLowerBounds.GateOp.and) → (∀ (x14 : ℕ) (x15 : PEqualNP.CircuitLowerBounds.Gate), x5.gates[x14]? = Option.some x15 → ∃ (x17 : ℕ) (x18 : ℕ), x15.inputs = [x17, x18] ∧ x17 < x18 ∧ x18 < x2 + x2 + x14) → (∀ (x15 x16 : Fin x2), x3 x15 x16 → (PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 fun (x18 : Fin (x2 + x2)) => Decidable.decide (x18 = Fin.castAdd x2 x15 ∨ x18 = Fin.natAdd x2 x16)) = Bool.true) → (∀ (x16 : Fin (x2 + x2) → Bool), Fintype.card { x17 : Fin x2 // x16 (Fin.natAdd x2 x17) = Bool.true } ≤ x1 → (¬∃ (x18 : Fin x2) (x19 : Fin x2), x3 x18 x19 ∧ x16 (Fin.castAdd x2 x18) = Bool.true ∧ x16 (Fin.natAdd x2 x19) = Bool.true) → PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 x16 = Bool.false) → x2 * x1 ≤ (100 : ℕ) * x5.size :=
+by
+  classical
+  intro x1 x2 x3 inst x5 h400 hn hlin huniq hmono hout hlt hgate hfanin hpos hrej
+  let A : Finset (Fin x2 × Fin x2) := Finset.univ.filter (fun p => x3 p.1 p.2)
+  have hAcard : A.card = x2 * x1 := by
+    simpa [A, Fintype.card_subtype] using h_count x1 x2 x3 h400 hn hlin huniq
+  have hAacc : ∀ p ∈ A, PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true := by
+    intro p hp
+    have hp3 : x3 p.1 p.2 := (Finset.mem_filter.mp hp).2
+    exact h_all x1 x2 x3 x5 hn hpos p hp3
+  have hsub : A ⊆ Finset.univ.filter (fun p : Fin x2 × Fin x2 => x3 p.1 p.2 ∧ PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true) := by
+    intro p hp
+    exact Finset.mem_filter.mpr ⟨Finset.mem_univ p, (Finset.mem_filter.mp hp).2, hAacc p hp⟩
+  have hcardle : A.card ≤ (Finset.univ.filter (fun p : Fin x2 × Fin x2 => x3 p.1 p.2 ∧ PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true)).card := Finset.card_le_card hsub
+  have hbound := h_cap x1 x2 x3 x5 h400 hn hmono hout hlt hgate hfanin hpos hrej
+  have hft : Fintype.card { p : Fin x2 × Fin x2 // x3 p.1 p.2 ∧ PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true } ≤ (100 : ℕ) * x5.size := by simpa using hbound
+  have hcard : (Finset.univ.filter (fun p : Fin x2 × Fin x2 => x3 p.1 p.2 ∧ PEqualNP.MetaComplexity.circuitFun (x2 + x2) x5 (fun (z : Fin (x2 + x2)) => Decidable.decide (z = Fin.castAdd x2 p.1 ∨ z = Fin.natAdd x2 p.2)) = Bool.true)).card ≤ (100 : ℕ) * x5.size := by simpa [Fintype.card_subtype] using hft
+  omega
+
